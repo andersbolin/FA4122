@@ -17,7 +17,7 @@ public class PlayerMove {
 
 
     //Constructor
-    public void PlayerMove(boolean left, boolean leftup, boolean leftdown, boolean right, boolean rightup, boolean rightdown) {
+    public PlayerMove(boolean left, boolean leftup, boolean leftdown, boolean right, boolean rightup, boolean rightdown) {
         this.left = left;
         this.leftup = leftup;
         this.leftdown = leftdown;

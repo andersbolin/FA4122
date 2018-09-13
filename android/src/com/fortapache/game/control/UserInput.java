@@ -10,13 +10,42 @@ public class UserInput {
      */
 
     //Variable declarations
-    private ArrayList<UserInput> movelist;
+    private ArrayList<PlayerMove> movelist;
 
 
     //Constructor
     public void UserInput(){
-        movelist = new ArrayList<UserInput>();
+        movelist = new ArrayList<PlayerMove>();
     }
 
     //Todo: Add input functions and array to store input in
+
+    //Creates user input and stacks on the FIFO list (movelist)
+    public void addUserInput(boolean left,boolean leftup,boolean leftdown,boolean right,boolean rightup,boolean rightdown) {
+        PlayerMove pm = new PlayerMove(left,leftup,leftdown,right,rightup,rightdown);
+        movelist.add(pm);
+    }
+
+    //Takes input from left up of the screen and stores is as a move
+    public void inputLeftUp() {
+        addUserInput(true,true,false,false,false,false);
+    }
+
+    //Takes input from left down of the screen and stores is as a move
+    public void inputLeftDown() {
+        addUserInput(true,false,true,false,false,false);
+    }
+
+    //Takes input from right up of the screen and stores is as a move
+    public void inputRightUp() {
+        addUserInput(false,false,false,true,true,false);
+    }
+
+    //Takes input from right down of the screen and stores is as a move
+    public void inputRightDown() {
+        addUserInput(false,false,false,true,false,true);
+    }
+
+    
+
 }
