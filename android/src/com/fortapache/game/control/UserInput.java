@@ -46,6 +46,6 @@ public class UserInput {
         addUserInput(false,false,false,true,false,true);
     }
 
-    
+    //Todo: Function that read the movelist and returns what move to do, This will need some AI
 
 }
