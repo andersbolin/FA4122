@@ -1,6 +1,7 @@
 package com.fortapache.game.control;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class UserInput {
 
@@ -11,11 +12,20 @@ public class UserInput {
 
     //Variable declarations
     private ArrayList<PlayerMove> movelist;
-
+    private List<PlayerPositions>[] pp;
 
     //Constructor
-    public void UserInput(){
+    public UserInput(){
+        pp = new List[8];
         movelist = new ArrayList<PlayerMove>();
+        pp[0].add(new PlayerPositions(false,false,false,true));
+        pp[1].add(new PlayerPositions(false,true,true,true));
+        pp[2].add(new PlayerPositions(false,false,true,false));
+        pp[3].add(new PlayerPositions(true,false,true,true));
+        pp[4].add(new PlayerPositions(false,false,true,true));
+        pp[5].add(new PlayerPositions(false,false,false,true));
+        pp[6].add(new PlayerPositions(false,false,true,true));
+        pp[7].add(new PlayerPositions(false,false,true,false));
     }
 
     //Todo: Add input functions and array to store input in
