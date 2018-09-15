@@ -2,6 +2,7 @@ package com.fortapache.game.control;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class UserInput {
 
@@ -11,21 +12,23 @@ public class UserInput {
      */
 
     //Variable declarations
-    private ArrayList<PlayerMove> movelist;
-    private List<PlayerPositions>[] pp;
+    private Stack<PlayerMove> movelist;
+    private ArrayList<PlayerPositions> pp;
+    private int currentIndex;
 
     //Constructor
     public UserInput(){
-        pp = new List[8];
-        movelist = new ArrayList<PlayerMove>();
-        pp[0].add(new PlayerPositions(false,false,false,true));
-        pp[1].add(new PlayerPositions(false,true,true,true));
-        pp[2].add(new PlayerPositions(false,false,true,false));
-        pp[3].add(new PlayerPositions(true,false,true,true));
-        pp[4].add(new PlayerPositions(false,false,true,true));
-        pp[5].add(new PlayerPositions(false,false,false,true));
-        pp[6].add(new PlayerPositions(false,false,true,true));
-        pp[7].add(new PlayerPositions(false,false,true,false));
+        currentIndex = 3;
+        pp = new ArrayList();
+        movelist = new Stack<>();
+        pp.add(new PlayerPositions(false,false,false,true));
+        pp.add(new PlayerPositions(false,true,true,true));
+        pp.add(new PlayerPositions(false,false,true,false));
+        pp.add(new PlayerPositions(true,false,true,true));
+        pp.add(new PlayerPositions(false,false,true,true));
+        pp.add(new PlayerPositions(false,false,false,true));
+        pp.add(new PlayerPositions(false,false,true,true));
+        pp.add(new PlayerPositions(false,false,true,false));
     }
 
     //Todo: Add input functions and array to store input in
@@ -57,5 +60,16 @@ public class UserInput {
     }
 
     //Todo: Function that read the movelist and returns what move to do, This will need some AI
+    public boolean makeMove() {
+        PlayerPositions p = pp.get(currentIndex);
+        PlayerMove pm = movelist.pop();
+
+        //Compare if move can be done and return
+        if(p.isDown() == pm.rightup){
+
+        }
+
+        return false;
+    }
 
 }

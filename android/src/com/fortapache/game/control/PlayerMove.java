@@ -7,6 +7,30 @@ public class PlayerMove {
     if player is on far end the sprite hits with club instead of move.
      */
 
+    public boolean isLeft() {
+        return left;
+    }
+
+    public boolean isLeftup() {
+        return leftup;
+    }
+
+    public boolean isLeftdown() {
+        return leftdown;
+    }
+
+    public boolean isRight() {
+        return right;
+    }
+
+    public boolean isRightup() {
+        return rightup;
+    }
+
+    public boolean isRightdown() {
+        return rightdown;
+    }
+
     //Declare variabes
     public boolean left;
     public boolean leftup;
