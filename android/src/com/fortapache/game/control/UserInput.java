@@ -64,10 +64,16 @@ public class UserInput {
         PlayerPositions p = pp.get(currentIndex);
         PlayerMove pm = movelist.pop();
 
-        //Compare if move can be done and return
-        if(p.isDown() == pm.rightup){
+        //TODO: Pop the move list and compare with position, if move is possible then update player
+        // else ignore attempted move
 
+        //Compare if move can be done and return
+        if(p.isDown() == pm.rightdown){
+            //TODO: Go down to position index 6 which is the middle bottom position, reset index to 6
+            currentIndex = 5;
+            //Todo: update the player position to the new position
         }
+        //Todo; Create all move checks
 
         return false;
     }
